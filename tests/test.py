@@ -2,7 +2,7 @@ import unittest
 import sys
 import os
 sys.path.append(os.path.abspath("."))
-from app import app
+from run import app
 
 class ChatAPITestCase(unittest.TestCase):
     def setUp(self):
