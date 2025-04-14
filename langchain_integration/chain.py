@@ -6,8 +6,10 @@ from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
 
 load_dotenv()
-# Initialize the LLM with  Gemini API key
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash",api_key=os.getenv('GEMINI_API_KEY'))
+
+os.environ['GOOGLE_API_KEY']=os.getenv('GOOGLE_API_KEY')
+# Initialize the LLM with Gemini API key
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
 
 # Creating a prompt template
 prompt = ChatPromptTemplate.from_messages(

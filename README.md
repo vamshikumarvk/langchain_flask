@@ -1,5 +1,65 @@
-# langchain_flask
-A lightweight conversational AI service using Langchain and flask
+# Google Conversational AI Service
+A lightweight conversational AI service using Langchain and flask powered by Gemini.
+This document provides instructions on how to set up, run the application.
+
+## Setup Instructions
+
+### Install Dependencies Locally
+
+Ensure you have Python 3.9+ installed. It's recommended to use a virtual environment.
+
+1.  **Clone the repository:**
+    ```
+    git clone https://github.com/vamshikumarvk/langchain_flask.git
+    cd langchain_flask
+    ```
+
+2.  **Create and activate a virtual environment (optional but recommended):**
+    ```
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3.  **Install dependencies:**
+    Navigate to the project's root directory and run:
+    ```
+    pip install -r requirements.txt
+    ```
+
+### Run the Application Locally
+
+1.  **Set up Environment Variables:**
+    Create a `.env` file in the project root directory and add your Google API key:
+    ```
+    GOOGLE_API_KEY=YOUR_ACTUAL_API_KEY
+    ```
+
+2.  **Start the Flask server:**
+    From the project's root directory, run:
+    ```
+    python run.py
+    ```
+    The application will be available at `http://127.0.0.1:5000`.
+
+### Build and Run the Docker Container
+
+Ensure you have Docker installed and running.
+
+1.  **Build the Docker image:**
+    From the project's root directory (where the `Dockerfile` is located), run:
+    ```
+    docker build -t langchain_flask .
+    ```
+
+2.  **Run the Docker container:**
+    You need to pass the `GOOGLE_API_KEY` as an environment variable to the container.
+    ```
+    docker run -p 5000:5000 -e GOOGLE_API_KEY="YOUR_ACTUAL_API_KEY" langchain_flask
+    ```
+    The application inside the container will be accessible at `http://localhost:5000`.
+
+
+
 
 # Technical Interview - Takehome Project
 
